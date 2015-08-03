@@ -2,6 +2,15 @@
 
 This is [iconfont](https://github.com/nfroidure/gulp-iconfont/) support package.
 
+## API
+### `glyphsMap(glyphs, [ withQuote, [ withBackSlash ] ])`
+- glyphs (array)
+  - iconfont glyphs array
+- withQuote (default `false`)
+  - If true return code is quoted double quote
+- withBackSlash (default `false`)
+  - If true append `//`
+
 ## Usage Example
 
 This sample pipe `iconfont` -> `_map.scss` -> compile with [`font.css`](https://github.com/inuscript/example-iconfont-sass/blob/master/scss/font.scss)
