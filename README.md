@@ -2,6 +2,21 @@
 
 This is [iconfont](https://github.com/nfroidure/gulp-iconfont/) support package.
 
+## Simple Usage
+You can use this gulp-iconfont.
+
+```js
+gulp.task("font", function(){
+  return gulp.src(fontSetting.src)
+    .pipe(iconfont(fontSetting.options))
+      .on('glyphs', function(glyphs){
+        var glyphMap = glyphsMap(glyphs, true, true)
+        file("codepoint.json", JSON.stringify(glyphMap))
+          .pipe(gulp.dest("./dest/"))
+      })
+    .pipe(gulp.dest(fontSetting.dest))
+})
+```
 ## API
 ### `glyphsMap(glyphs, [ withQuote, [ withBackSlash ] ])`
 - glyphs (array)
@@ -11,29 +26,13 @@ This is [iconfont](https://github.com/nfroidure/gulp-iconfont/) support package.
 - withBackSlash (default `false`)
   - If true append `//`
 
-## Usage Example
+## CSS output Example
 
-This sample pipe `iconfont` -> `_map.scss` -> compile with [`font.css`](https://github.com/inuscript/example-iconfont-sass/blob/master/scss/font.scss)
+Example for pipe `iconfont` -> `_map.scss` -> compile with [`font.scss`](https://github.com/inuscript/example-iconfont-sass/blob/master/scss/font.scss) -> `font.css`
 
-You can see more example : [here](https://github.com/inuscript/example-iconfont-sass)
+You can see [full example](https://github.com/inuscript/example-iconfont-sass)
 
 ```js
-var file = require('gulp-file')
-var iconfont = require("gulp-iconfont")
-var sass = require("gulp-sass")
-var glyphsMap = require('iconfont-glyphs-map');
-var jsonSassObj = require('json-sass-obj');
-
-// settings
-var fontSetting = {
-  src : ["svg/*.svg"],
-  dest : "./dest/fonts",
-  options : {
-    fontName: "myFont",
-    timestamp: 10
-  }
-}
-
 gulp.task("font-with-css", function(){
   return gulp.src(fontSetting.src)
     .pipe(iconfont(fontSetting.options))
