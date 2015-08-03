@@ -6,7 +6,7 @@
   "scripts": {
     "test": "mocha --require intelli-espower-loader"
   },
-  "keywords": [],
+  "keywords": ["iconfont", "json", "glyph"],
   "author": "inuscript",
   "license": "ISC",
   "files": [
