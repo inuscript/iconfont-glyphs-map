@@ -24,7 +24,7 @@ gulp.task("font", function(){
 - withQuote (default `false`)
   - If true return code is quoted double quote
 - withBackSlash (default `false`)
-  - If true append `//`
+  - If true append `\`
 
 ## CSS output Example
 
