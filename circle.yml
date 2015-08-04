@@ -1,4 +1,4 @@
 dependencies:
   override:
-    - nvm use 0.12.2
-    - nvm use 0.10.22
+    - 'nvm use 0.12.2'
+    - 'nvm use 0.10.33'
