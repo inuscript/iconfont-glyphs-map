@@ -103,6 +103,12 @@ describe("iconfont-glyphs-map", function(){
 
   describe("glyphMap.map", function(){
     it("should return es6 map", function(){
+      try{
+        new Map()
+      }catch(e){
+        skip("Not supported")
+        return 
+      }
       var map = glyphMap.map(mockCodepoint)
       var expect = new Map()
       expect.set("account", "E001")
