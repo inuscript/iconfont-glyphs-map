@@ -83,9 +83,9 @@ describe("iconfont-glyphs-map", function(){
       })
     })
   })
-  describe("glyphMap.asArray", function(){
+  describe("glyphMap.array", function(){
     it("should return array", function(){
-      var array = glyphMap.asArray(mockCodepoint)
+      var array = glyphMap.array(mockCodepoint)
       assert.deepEqual(array, [
         { name: "account",     code: "E001"},
         { name: "arrow-down",  code: "E002"},
@@ -101,9 +101,9 @@ describe("iconfont-glyphs-map", function(){
     })
   })
 
-  describe("glyphMap.asMap", function(){
+  describe("glyphMap.map", function(){
     it("should return es6 map", function(){
-      var map = glyphMap.asMap(mockCodepoint)
+      var map = glyphMap.map(mockCodepoint)
       var expect = new Map()
       expect.set("account", "E001")
       expect.set("arrow-down", "E002")

@@ -40,7 +40,9 @@ var glyphs = [
   {name: "account", code: "E001"}
 ]
 ```
+### `glyphsMap.map(glyphs, [ withQuote, [ withBackSlash ] ])`
 
+return glyph as ES6 Map object
 ## CSS output Example
 
 Example for pipe `iconfont` -> `_map.scss` -> compile with [`font.scss`](https://github.com/inuscript/example-iconfont-sass/blob/master/scss/font.scss) -> `font.css`

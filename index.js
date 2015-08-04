@@ -40,5 +40,5 @@ var asMap = function(glyphs, appendChar, withQuote){
 }
 
 module.exports = glyphMap
-module.exports.asArray = asArray
-module.exports.asMap = asMap
+module.exports.array = asArray
+module.exports.map = asMap
