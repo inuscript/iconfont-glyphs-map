@@ -52,7 +52,7 @@ gulp.task("font-with-css", function(){
   return gulp.src(fontSetting.src)
     .pipe(iconfont(fontSetting.options))
       .on('glyphs', function(glyphs){
-        var glyphMap = glyphsMap(glyphs, true, true)
+        var glyphMap = glyphsMap(glyphs, "\\", true)
         file("_map.scss", JSON.stringify({
           name: fontSetting.options.fontName,
           path: fontSetting.options.dest,
