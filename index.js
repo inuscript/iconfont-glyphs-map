@@ -20,4 +20,25 @@ var glyphMap = function(glyphs, appendChar, withQuote){
   }, {})
 }
 
+var asArray =  function(glyphs, appendChar, withQuote){
+  var obj = glyphMap(glyphs, appendChar, withQuote)
+  var arr = []
+  Object.keys(obj).forEach(function(name){
+    var code = obj[name]
+    arr.push({ name: name, code: code })
+  })
+  return arr
+}
+
+var asMap = function(glyphs, appendChar, withQuote){
+  var obj = asArray(glyphs, appendChar, withQuote)
+  var map = new Map()
+  obj.forEach(function(item){
+    map.set(item[0], item[1])
+  })
+  return map
+}
+
 module.exports = glyphMap
+module.exports.asArray = asArray
+module.exports.asMap = asMap
