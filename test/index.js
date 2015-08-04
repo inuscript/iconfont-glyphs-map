@@ -18,7 +18,24 @@ describe("iconfont-glyphs-map", function(){
       "search": "E00A"
     })
   })
-  it("with quote", function(){
+
+  it("with backslash escape", function(){
+    var map = glyphMap(mockCodepoint, "\\")
+    assert.deepEqual(map, {
+      "account":     "\\E001",
+      "arrow-down":  "\\E002",
+      "arrow-left":  "\\E003",
+      "arrow-right": "\\E004",
+      "arrow-up":    "\\E005",
+      "basket": "\\E006",
+      "close":  "\\E007",
+      "minus":  "\\E008",
+      "plus":   "\\E009",
+      "search": "\\E00A"
+    })
+  })
+
+  it("with only quote", function(){
     var map = glyphMap(mockCodepoint, true)
     assert.deepEqual(map, {
       "account":     "\"E001\"",
@@ -33,23 +50,8 @@ describe("iconfont-glyphs-map", function(){
       "search": "\"E00A\""
     })
   })
-  it("with backslash", function(){
-    var map = glyphMap(mockCodepoint, false, true)
-    assert.deepEqual(map, {
-      "account":     "\\E001",
-      "arrow-down":  "\\E002",
-      "arrow-left":  "\\E003",
-      "arrow-right": "\\E004",
-      "arrow-up":    "\\E005",
-      "basket": "\\E006",
-      "close":  "\\E007",
-      "minus":  "\\E008",
-      "plus":   "\\E009",
-      "search": "\\E00A"
-    })
-  })
   it("with quote and backslash", function(){
-    var map = glyphMap(mockCodepoint, true, true)
+    var map = glyphMap(mockCodepoint, "\\", true)
     assert.deepEqual(map, {
       "account":     "\"\\E001\"",
       "arrow-down":  "\"\\E002\"",

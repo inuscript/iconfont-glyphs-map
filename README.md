@@ -18,13 +18,28 @@ gulp.task("font", function(){
 })
 ```
 ## API
-### `glyphsMap(glyphs, [ withQuote, [ withBackSlash ] ])`
+### `glyphsMap(glyphs, [ prefixChar, [ withQuote ] ])`
+
+return glyph `Object`
+
 - glyphs (array)
   - iconfont glyphs array
+- prefixChar (default `empty`)
+  - You can add escape character 
+    - For sass, you can append `\`.
+    - For ES6, you can append `\u`.
 - withQuote (default `false`)
   - If true return code is quoted double quote
-- withBackSlash (default `false`)
-  - If true append `\`
+
+### `glyphsMap.array(glyphs, [ withQuote, [ withBackSlash ] ])`
+
+return glyph as `Object Array` like this
+
+```js
+var glyphs = [
+  {name: "account", code: "E001"}
+]
+```
 
 ## CSS output Example
 
