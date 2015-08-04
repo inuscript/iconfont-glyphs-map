@@ -4,9 +4,13 @@
   "description": "Iconfont glyphs map generator",
   "main": "index.js",
   "scripts": {
-    "test": "mocha "
+    "test": "mocha ; eslint *.js"
   },
-  "keywords": ["iconfont", "json", "glyph"],
+  "keywords": [
+    "iconfont",
+    "json",
+    "glyph"
+  ],
   "author": "inuscript",
   "license": "ISC",
   "files": [
@@ -17,6 +21,7 @@
     "quote": "^0.4.0"
   },
   "devDependencies": {
+    "eslint": "^1.0.0",
     "espower-loader": "^0.11.0",
     "intelli-espower-loader": "^0.7.0",
     "mocha": "^2.2.5",

@@ -34,6 +34,21 @@ describe("iconfont-glyphs-map", function(){
       "search": "\\E00A"
     })
   })
+  it("with backslash escape", function(){
+    var map = glyphMap(mockCodepoint, '\\u')
+    assert.deepEqual(map, {
+      "account":     '\\uE001',
+      "arrow-down":  '\\uE002',
+      "arrow-left":  '\\uE003',
+      "arrow-right": '\\uE004',
+      "arrow-up":    '\\uE005',
+      "basket": '\\uE006',
+      "close":  '\\uE007',
+      "minus":  '\\uE008',
+      "plus":   '\\uE009',
+      "search": '\\uE00A'
+    })
+  })
 
   it("with only quote", function(){
     var map = glyphMap(mockCodepoint, true)
