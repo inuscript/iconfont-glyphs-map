@@ -103,11 +103,11 @@ describe("iconfont-glyphs-map", function(){
 
   describe("glyphMap.map", function(){
     var testFn = it
-    // try{
-    //   new Map()
-    // }catch(e){
-    //   testFn = it.skip
-    // }
+    try{
+      new Map()
+    }catch(e){
+      testFn = it.skip
+    }
 
     testFn("should return es6 map", function(){
       var map = glyphMap.map(mockCodepoint)
