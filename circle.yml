@@ -1,9 +1,6 @@
-machine:
-  node:
-    version: 0.12.0
-
 test:
   override:
+    - nvm alias default 0.12.0
     - npm test
     - nvm alias default 0.10.0
     - npm test
