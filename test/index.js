@@ -1,6 +1,7 @@
 var glyphMap = require("../")
 var mockCodepoint = require("./fixture/codepoint.json")
 var assert = require("power-assert")
+var semver = require("semver")
 
 describe("iconfont-glyphs-map", function(){
   describe("glyphMap", function(){
@@ -103,9 +104,7 @@ describe("iconfont-glyphs-map", function(){
 
   describe("glyphMap.map", function(){
     var testFn = it
-    try{
-      new Map()
-    }catch(e){
+    if(semver(process.version, ' < 0.12')){
       testFn = it.skip
     }
 
